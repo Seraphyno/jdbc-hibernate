@@ -11,6 +11,7 @@ public class Main {
         DatabaseConnection connection = new DatabaseConnection();
 
         if (connection.isConnected()) {
+            insertData(connection.getConnection());
             readData(connection.getConnection());
         } else {
             System.out.println("Database not connected");
@@ -19,9 +20,8 @@ public class Main {
 
     private static void printResults(ResultSet resultSet) {
         try {
-            if (resultSet.next()) {
-                System.out.println("productID | productCode | name | quantity | price");
-            }
+            System.out.println("productID | productCode | name | quantity | price");
+
             while (resultSet.next()) {
                 int productID = resultSet.getInt("productID");
                 int quantity = resultSet.getInt("quantity");
@@ -46,7 +46,15 @@ public class Main {
     }
 
     // TODO - create an insert and update statement
-
+    private static void insertData(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            int update = statement.executeUpdate("INSERT INTO products(productCode, name, quantity, price) " +
+                    "VALUES ('PEN', 'Pen Sera', 5000, 1.23)");
+            System.out.println("Updated " + update + " rows");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     // TODO - move to preparedStatements
 

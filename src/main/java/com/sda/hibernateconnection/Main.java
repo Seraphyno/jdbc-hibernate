@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         PersonDao personDao = new PersonDao();
 
-        //CREATE
+        // CREATE
         Person person = new Person("Henry", "Haines", "HenrySHaines@dayrep.com", "United States");
 
         personDao.createPerson(person);
@@ -21,7 +21,7 @@ public class Main {
         System.out.println(person.toString());
         System.out.println("---------------------------");
 
-        //UPDATE
+        // UPDATE
         person.setCountry("Canada");
         personDao.updatePerson(person);
 
@@ -30,10 +30,10 @@ public class Main {
         System.out.println(person.toString());
         System.out.println("---------------------------");
 
-        //DELETE
+        // DELETE
         personDao.deletePerson(person);
 
-        //SELECT
+        // READ
         List< Person > persons = personDao.getPersons();
         for(Person p : persons){
             System.out.println(p.toString());

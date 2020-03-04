@@ -3,6 +3,7 @@ package com.sda.jdbcconnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import static com.sda.jdbcconnection.ConnectionDetails.*;
 
@@ -20,6 +21,13 @@ public class DatabaseConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(URL, USER, PASS);
             System.out.println("Connected to test database");
+
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(CREATE_TABLE);
+            statement.close();
+
+            System.out.println("Created the products table");
+
             return true;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();

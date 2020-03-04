@@ -26,7 +26,7 @@ public class PersonDao {
         }
     }
 
-    public void updatePerson(Person person){
+    public void updatePerson(Person person) {
         Transaction transaction = null;
         try {
             Session session = HibernateConfiguration.getSessionFactory().openSession();
@@ -44,7 +44,7 @@ public class PersonDao {
         }
     }
 
-    public void deletePerson(Person person){
+    public void deletePerson(Person person) {
         Transaction transaction = null;
         try {
             Session session = HibernateConfiguration.getSessionFactory().openSession();
@@ -62,12 +62,11 @@ public class PersonDao {
         }
     }
 
-    public Person getPerson(Long id){
+    public Person getPerson(Long id) {
         try {
             Session session = HibernateConfiguration.getSessionFactory().openSession();
-            Person person = session.find(Person.class, id);
-            return person;
-        } catch (Exception ex){
+            return session.find(Person.class, id);
+        } catch (Exception ex) {
             ex.printStackTrace();
             return null;
         }
@@ -76,9 +75,8 @@ public class PersonDao {
     public List<Person> getPersons() {
         try {
             Session session = HibernateConfiguration.getSessionFactory().openSession();
-            List<Person> persons = session.createQuery("from Person", Person.class).list();
-            return persons;
-        }catch (Exception ex){
+            return session.createQuery("from Person", Person.class).list();
+        } catch (Exception ex) {
             ex.printStackTrace();
             return null;
         }
