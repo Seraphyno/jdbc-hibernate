@@ -19,7 +19,7 @@ public class DatabaseConnection {
             // This will load the MySQL driver, each DB has its own driver
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(URL, USER, PASS);
-            System.out.println("Connected to products");
+            System.out.println("Connected to test database");
             return true;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();

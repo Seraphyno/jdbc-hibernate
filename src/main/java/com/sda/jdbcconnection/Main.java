@@ -44,4 +44,11 @@ public class Main {
             e.printStackTrace();
         }
     }
+
+    // TODO - create an insert and update statement
+
+
+    // TODO - move to preparedStatements
+
+
 }
