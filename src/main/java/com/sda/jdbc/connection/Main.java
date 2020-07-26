@@ -1,4 +1,4 @@
-package com.sda.jdbcconnection;
+package com.sda.jdbc.connection;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -20,7 +20,7 @@ public class Main {
 
     private static void printResults(ResultSet resultSet) {
         try {
-            System.out.println("productID | productCode | name | quantity | price");
+            System.out.println(String.format("id | code | %3s | quantity | price", "name"));
 
             while (resultSet.next()) {
                 int productID = resultSet.getInt("productID");

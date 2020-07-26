@@ -1,15 +1,15 @@
-package com.sda.jdbcconnection;
+package com.sda.jdbc.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import static com.sda.jdbcconnection.ConnectionDetails.*;
+import static com.sda.jdbc.connection.ConnectionDetails.*;
 
 public class DatabaseConnection {
     private Connection connection;
-    private boolean isConnected;
+    private final boolean isConnected;
 
     public DatabaseConnection() {
         this.isConnected = initConnection();
@@ -26,7 +26,7 @@ public class DatabaseConnection {
             statement.executeUpdate(CREATE_TABLE);
             statement.close();
 
-            System.out.println("Created the products table");
+            System.out.println("Created the products table\n\n");
 
             return true;
         } catch (ClassNotFoundException | SQLException e) {

@@ -1,8 +1,8 @@
-package com.sda.hibernateconnection;
+package com.sda.hibernate.connection;
 
-import com.sda.hibernateconnection.connection.HibernateConfiguration;
-import com.sda.hibernateconnection.dao.PersonDao;
-import com.sda.hibernateconnection.entity.Person;
+import com.sda.hibernate.connection.configuration.HibernateConfiguration;
+import com.sda.hibernate.connection.dao.PersonDao;
+import com.sda.hibernate.connection.entity.Person;
 
 import java.util.List;
 

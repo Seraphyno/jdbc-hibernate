@@ -1,4 +1,4 @@
-package com.sda.jdbcconnection;
+package com.sda.jdbc.connection;
 
 class ConnectionDetails {
 

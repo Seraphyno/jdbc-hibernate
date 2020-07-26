@@ -1,4 +1,4 @@
-package com.sda.hibernateconnection.entity;
+package com.sda.hibernate.connection.entity;
 
 import javax.persistence.*;
 
